@@ -3,9 +3,9 @@ include:
   - java
 
 # import ES repo key
-import-es-repo-key:
-  cmd.run:
-    - name: rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
+#import-es-repo-key:
+#  cmd.run:
+#    - name: rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
 
 es-yum-repo:
   pkgrepo.managed:
