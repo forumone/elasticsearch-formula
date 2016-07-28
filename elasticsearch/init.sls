@@ -26,9 +26,9 @@ install-elasticsearch:
       - pkg: elasticsearch
 
 modify-es-config-enable-cors:
-  file.replace:
+  file.append:
     - name: /etc/elasticsearch/elasticsearch.yml
-    - pattern: |
-        http.cors.enabled: true
-    - repl: "http.cors.enabled: true"
+    - text: "http.cors.enabled: true"
     - append_if_not_found: True
+    - watch_in:
+      - service: elasticsearch
