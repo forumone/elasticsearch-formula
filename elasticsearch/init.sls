@@ -29,6 +29,5 @@ modify-es-config-enable-cors:
   file.append:
     - name: /etc/elasticsearch/elasticsearch.yml
     - text: "http.cors.enabled: true"
-    - append_if_not_found: True
     - watch_in:
       - service: elasticsearch
