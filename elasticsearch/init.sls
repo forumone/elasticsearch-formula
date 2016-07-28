@@ -25,3 +25,9 @@ install-elasticsearch:
     - require:
       - pkg: elasticsearch
 
+modify-es-config-enable-cors:
+  file.line:
+    - name: /etc/elasticsearch/elasticsearch.yml
+    - content: "http.cors.enabled: true"
+    - mode: ensure
+    - location: end
