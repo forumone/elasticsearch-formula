@@ -18,10 +18,9 @@ es-yum-repo:
 install-elasticsearch:
   pkg.installed:
     - name: elasticsearch
-  service:
+  service.running:
     - name: elasticsearch
-    - running
-    - disabled: False
+    - enable: True
     - require:
       - pkg: elasticsearch
 
