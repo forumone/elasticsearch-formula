@@ -27,7 +27,11 @@ install-elasticsearch:
 modify-es-config-enable-cors:
   file.append:
     - name: /etc/elasticsearch/elasticsearch.yml
-    - text: "http.cors.enabled: true"
+    - text: 
+      - 'http.cors.enabled: true'
+      - 'http.cors.allow-origin : "*"'
+      - 'http.cors.allow-methods : OPTIONS, HEAD, GET, POST, PUT, DELETE'
+      - 'http.cors.allow-headers : X-Requested-With,X-Auth-Token,Content-Type, Content-Length'
     - watch_in:
       - service: elasticsearch
 
