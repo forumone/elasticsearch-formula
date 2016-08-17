@@ -31,3 +31,10 @@ modify-es-config-enable-cors:
     - text: "http.cors.enabled: true"
     - watch_in:
       - service: elasticsearch
+
+modify-es-config-bind-host:
+  file.append:
+    - name: /etc/elasticsearch/elasticsearch.yml
+    - text: "network.bind_host: 0.0.0.0"
+    - watch_in:
+      - service: elasticsearch
